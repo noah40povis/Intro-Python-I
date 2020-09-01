@@ -12,13 +12,9 @@ Additionally, your code will be safer if you opt to "write-protect"
 data that does not need to be changed. Tuples enforce immutability
 automatically.
 """
-
-# Example:
-
 import math
 
 def dist(a, b):
-    """Compute the distance between two x,y points."""
     x0, y0 = a  # Destructuring assignment
     x1, y1 = b
 
@@ -28,12 +24,14 @@ a = (2, 7)   # <-- x,y coordinates stored in tuples
 b = (-14, 72)
 
 # Prints "Distance is 66.94"
-print("Distance is: {:.2f}".format(dist(a, b)))
+print("Distance is: {0}".format(dist(a, b)))
 
 
 
 # Write a function `print_tuple` that prints all the values in a tuple
-
+def print_tuple(tuple):
+    for i in tuple:
+        print(i)
 # YOUR CODE HERE
 
 t = (1, 2, 5, 7, 99)
@@ -41,4 +39,5 @@ print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
 # Declare a tuple of 1 element then print it
 u = (1)  # What needs to be added to make this work?
-print_tuple(u)
+print_tuple(range(u)) # we added range to this line because for loops only work with iterable objects.
+
